@@ -66,12 +66,12 @@ var argv = yargs
   }
   //function to increase vol
   function increase(){
-
+    //add code to increase volume
   }
 
   //function to decrease the vol
   function decrease(){
-
+    //add code to decrease volume
   }
 
   var command = argv._[0];
