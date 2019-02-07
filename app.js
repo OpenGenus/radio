@@ -1,5 +1,7 @@
 const yargs = require('yargs');
 const mpg = require('mpg123');
+var volPercentage = 40;
+
  
 var player = new mpg.MpgPlayer();
  
@@ -64,14 +66,25 @@ var argv = yargs
   function stop(){
     player.stop()
   }
+  
   //function to increase vol
   function increase(){
-    //add code to increase volume
+    if (volPercentage<=95) {
+      player.volume(volPercentage+5);
+    }
+    else{
+      console.log("Volume Full")
+    }
   }
 
   //function to decrease the vol
   function decrease(){
-    //add code to decrease volume
+    if (volPercentage>=5) {
+    player.volume(volPercentage-5);
+    }
+    else{
+      console.log("Mute")
+    }
   }
 
   var command = argv._[0];
